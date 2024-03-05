@@ -8,6 +8,8 @@ export async function ask(request: HttpRequest, context: InvocationContext): Pro
     return { body: `Hello, ${name}!` };
 };
 
+app.setup({ enableHttpStream: true });
+
 app.http('ask', {
     methods: ['GET', 'POST'],
     authLevel: 'anonymous',
