@@ -1,1 +1,1 @@
-GET http://localhost:7071/api/ask
+curl -X POST http://localhost:7071/api/ask -d '{"question": "What is the best news about Copilot?"}' -H "Content-Type: application/json"
