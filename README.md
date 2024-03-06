@@ -7,6 +7,8 @@ The code comes in two versions:
 - [local version](src/local.ts): uses FAISS and Ollama with LLaMa2 model for completion and all-minilm-l6-v2 for embeddings
 - [Azure cloud version](src/azure.ts): uses Azure AI Search and GPT-4 Turbo model for completion and text-embedding-3-large for embeddings
 
+> **NOTE**: This sample using the new HTTP streaming support in Azure Functions that's currently in preview. You can find more information about this feature in the [blog post announcement](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/azure-functions-support-for-http-streams-in-node-js-is-now-in/ba-p/4066575).
+
 ## Installation
 
 You need [Node.js](https://nodejs.org/en) and [Ollama](https://ollama.com/download) installed to run this demo.
