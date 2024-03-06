@@ -78,7 +78,7 @@ export async function* askYoutube(question?: string) {
   console.log(`Answer for the question "${ask}":\n`);
   for await (const chunk of stream) {
     process.stdout.write(chunk.answer ?? "");
-    if (chunk.answer !== undefined)
+    if (chunk.answer)
       yield chunk.answer;
   }
   console.log();
