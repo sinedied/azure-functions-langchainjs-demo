@@ -57,11 +57,12 @@ export async function* askYoutube(question?: string) {
     retriever: vectorStore.asRetriever(),
     combineDocsChain,
   });
-  const stream = await chain.stream({ input: QUESTION });
+  const ask = question ?? QUESTION
+  const stream = await chain.stream({ input: ask });
 
   // Print the result ----------------------------------------------------------
 
-  console.log(`Answer for the question "${QUESTION}":\n`);
+  console.log(`Answer for the question "${ask}":\n`);
   for await (const chunk of stream) {
     process.stdout.write(chunk.answer ?? "");
     if (chunk.answer)
