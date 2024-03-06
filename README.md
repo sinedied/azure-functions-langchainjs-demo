@@ -1,18 +1,18 @@
-# 🦜️🔗 langchainjs-quickstart-demo
+# 🦜️🔗 azure-langchainjs-demo
 
 Discover the journey of building a generative AI application using LangChain.js and Azure.
 This demo explore the development process from idea to production, using a RAG-based approach for a Q&A system based on YouTube video transcripts.
 
 The code comes in two versions:
-- [local prototype](src/prototype.js): uses FAISS and Ollama with LLaMa2 model for completion and all-minilm-l6-v2 for embeddings
-- [Azure cloud version](src/azure.js): uses Azure AI Search and GPT-4 Turbo model for completion and text-embedding-3-large for embeddings
+- [local version](src/local.ts): uses FAISS and Ollama with LLaMa2 model for completion and all-minilm-l6-v2 for embeddings
+- [Azure cloud version](src/azure.ts): uses Azure AI Search and GPT-4 Turbo model for completion and text-embedding-3-large for embeddings
 
 ## Installation
 
 You need [Node.js](https://nodejs.org/en) and [Ollama](https://ollama.com/download) installed to run this demo.
 
 ```bash
-npm install --legacy-peer-deps
+npm install
 ollama pull llama2
 ollama pull all-minilm:l6-v2
 ```
@@ -21,6 +21,12 @@ ollama pull all-minilm:l6-v2
 
 ```bash
 npm start
+```
+
+Once the server is running, you can test the API in another terminal:
+
+```bash
+curl http://localhost:7071/api/ask --json '{ "question": "Will GPT-4 Turbo be available on Azure?" }'
 ```
 
 ## Running the Azure version
@@ -52,13 +58,17 @@ AZURE_OPENAI_API_KEY=<your-openai-key>
 AZURE_OPENAI_API_ENDPOINT=<your-openai-endpoint>
 AZURE_OPENAI_API_DEPLOYMENT_NAME="gpt4-turbo"
 AZURE_OPENAI_API_EMBEDDINGS_DEPLOYMENT_NAME="text-embedding-3-large"
+USE_AZURE=true
 ```
 
 Then you can run:
 
 ```bash
-npm run start:azure
+npm run start
 ```
+
+And test the API like before.
+
 ## Contributing
 
 This project welcomes contributions and suggestions. Most contributions require you to agree to a
