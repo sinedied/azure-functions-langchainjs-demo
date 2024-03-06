@@ -1,4 +1,4 @@
-# 🦜️🔗 azure-langchainjs-demo
+# ⚡ + 🦜️🔗 azure-functions-langchainjs-demo
 
 Discover the journey of building a generative AI application using LangChain.js and Azure.
 This demo explore the development process from idea to production, using a RAG-based approach for a Q&A system based on YouTube video transcripts.
