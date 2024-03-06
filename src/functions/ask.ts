@@ -28,7 +28,7 @@ export async function ask(
   // We must implement the _read method, but we don't need to do anything
   buffer._read = () => {};
 
-  // Do not await the otherwise the streaming won't work
+  // Do not await otherwise the streaming won't work
   streamData(chunks, buffer);
 
   return {
